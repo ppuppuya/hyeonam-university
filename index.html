@@ -2,7 +2,9 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="only light" />
+<meta name="theme-color" content="#111111" />
 <title>VANDAL — Official Website</title>
 <style>
 :root{
@@ -34,7 +36,7 @@ a{text-decoration:none;color:inherit}
 .menu{display:none;margin-left:auto;border:0;background:transparent;font-size:22px}
 
 .hero{background:var(--black);color:#fff;min-height:800px;display:grid;align-items:end;position:relative;overflow:hidden}
-.hero .visual{position:absolute;inset:0;background:#000 url('assets/hero-bandroom.png') center center/cover no-repeat}
+.hero .visual{position:absolute;inset:0;background:#000 url('assets/img_01_eb8bad7c25.png') center center/cover no-repeat}
 .hero .visual:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.38) 50%,rgba(0,0,0,.76) 100%),linear-gradient(90deg,rgba(0,0,0,.34) 0%,rgba(0,0,0,.08) 38%,rgba(0,0,0,.3) 100%)}
 .hero-slot{display:none}
 .hero-copy{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:0 28px 54px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
@@ -173,7 +175,6 @@ h2{margin:0;font-size:clamp(44px,6vw,84px);line-height:.9;letter-spacing:-.055em
 .profile-block{display:grid;grid-template-columns:135px minmax(0,1fr);gap:18px;padding:22px 0;border-bottom:1px solid #e5e5e1}
 .profile-label{font-size:10px;font-weight:900;letter-spacing:.18em;color:#777;text-transform:uppercase;padding-top:3px}
 .profile-value{font-size:14px;line-height:1.8;color:#2b2b2b;word-break:keep-all}
-.profile-value strong{font-weight:800}
 .profile-chips{display:flex;flex-wrap:wrap;gap:7px}
 .profile-chip{border:1px solid #d1d1cc;border-radius:999px;padding:8px 10px;font-size:11px;line-height:1;letter-spacing:.02em;background:#fafaf8}
 .profile-known{display:flex;flex-wrap:wrap;gap:7px 13px}
@@ -358,7 +359,7 @@ body{background:#111;color:#131313;font-family:Arial,"Noto Sans CJK KR",sans-ser
 .ticker{height:81px;background:var(--accent);border:0;color:#101010;overflow:hidden}
 .ticker-track{gap:0;font-family:Impact,"Arial Black",Arial,sans-serif;font-size:clamp(30px,3.3vw,52px);line-height:1;letter-spacing:-.018em;font-weight:1000;animation-duration:38s}
 .ticker-track span{white-space:nowrap}
-.ticker-track span:before{content:'✳';color:#141414;margin:0 26px;font-family:Arial;font-size:.78em}
+.ticker-track span:before{content:'';color:#141414;margin:0 26px;font-family:Arial;font-size:.78em}
 .section{padding:113px clamp(24px,4vw,72px)}
 .wrap{max-width:1460px}
 .eyebrow{font-size:11px;letter-spacing:.21em;font-weight:900;color:#8a8a8a;margin-bottom:22px}
@@ -448,7 +449,7 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
 .community .section-head{margin-bottom:40px}
 .community-grid{grid-template-columns:minmax(295px,.62fr) minmax(0,1.38fr);gap:0;border:1px solid #171717}
 .board-intro{background:#121212;min-height:450px;padding:37px;position:relative;overflow:hidden}
-.board-intro:after{content:'✳';position:absolute;right:-12px;bottom:0;font-family:Arial,sans-serif;color:var(--accent);font-size:clamp(130px,14vw,245px);line-height:1;opacity:.95;z-index:0;transform:rotate(-13deg)}
+.board-intro:after{content:'';position:absolute;right:-12px;bottom:0;font-family:Arial,sans-serif;color:var(--accent);font-size:clamp(130px,14vw,245px);line-height:1;opacity:.95;z-index:0;transform:rotate(-13deg)}
 .board-intro>div{position:relative;z-index:1}
 .board-intro .eyebrow{color:#ff5259;font-weight:900}
 .board-intro strong{font-family:Impact,"Arial Black",Arial,sans-serif;line-height:1.08;font-size:clamp(42px,3.6vw,60px)}
@@ -649,13 +650,158 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
 .tag-visual.tag-merch-art{display:flex!important;align-items:center;justify-content:center;overflow:hidden;background:#131a33;border:0!important;min-width:0}
 .tag-visual.tag-merch-art img{width:100%;height:100%;max-width:100%;max-height:100%;display:block;object-fit:cover;object-position:center}
 @media(max-width:700px){.tag-visual.tag-merch-art{width:100%;height:auto!important;min-height:0!important;aspect-ratio:1/1}}
+
+/* ===== v11 iOS / Safari rendering compatibility ===== */
+:root{color-scheme:only light}
+html{
+  color-scheme:only light;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased;
+}
+body{
+  background-color:#111;
+  forced-color-adjust:none;
+}
+button,input,select,textarea{
+  -webkit-appearance:none;
+  appearance:none;
+  font:inherit;
+  color:inherit;
+}
+a{-webkit-tap-highlight-color:transparent}
+a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}
+.topbar{-webkit-backdrop-filter:none}
+.modal{-webkit-backdrop-filter:blur(10px)}
+.hero-play{-webkit-backdrop-filter:blur(10px)}
+.cd-choice{-webkit-backdrop-filter:blur(12px)}
+.info-modal{-webkit-backdrop-filter:blur(7px)}
+.info-modal-card button{-webkit-backdrop-filter:blur(7px)}
+
+/* Never let iOS substitute Apple Color Emoji for the brand sparkle. */
+.heading-asterisk,.tag-star{
+  display:inline-block;
+  width:.72em;
+  height:.72em;
+  background:currentColor;
+  clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+  -webkit-clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+  vertical-align:.12em;
+  line-height:0;
+  font-size:inherit!important;
+}
+.heading-asterisk{width:.38em;height:.38em;margin-left:.14em;color:#ff3538}
+.official-tag .tag-star{width:.36em;height:.36em;margin-left:.11em;color:#fff}
+.ticker-track span:before{
+  content:''!important;
+  display:inline-block;
+  width:.58em;
+  height:.58em;
+  margin:0 26px;
+  background:#141414;
+  clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+  -webkit-clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+  vertical-align:.02em;
+}
+.board-intro:after{
+  content:''!important;
+  width:clamp(130px,14vw,245px);
+  height:clamp(130px,14vw,245px);
+  background:var(--accent);
+  clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+  -webkit-clip-path:polygon(50% 0%,58% 34%,85% 15%,66% 42%,100% 50%,66% 58%,85% 85%,58% 66%,50% 100%,42% 66%,15% 85%,34% 58%,0% 50%,34% 42%,15% 15%,42% 34%);
+}
+
+/* Explicit section colors so iOS/in-app Safari does not reinterpret them. */
+.members{background:#111!important;color:#fff!important}
+.member{background:#1c1c1c!important;color:#fff!important}
+.latest{background:#f7f6f3!important;color:#121212!important}
+.world{background:#111!important;color:#fff!important}
+.world-card{background:#faf9f6!important;color:#111!important}
+.world-card.dark{background:#ff3538!important;color:#101010!important}
+.official-tag{background:#ff3538!important;color:#141414!important}
+.tag-president{background:#121212!important;color:#fff!important}
+.tag-notice{background:#fff!important;color:#111!important}
+.community{background:#f7f6f3!important;color:#111!important}
+.board{background:#fff!important;color:#111!important}
+
+/* Mobile member cards: identical image area, identical card height, EN always below KR. */
+@media(max-width:700px){
+  .member-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+  .member{
+    display:block!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    transform:none!important;
+  }
+  .member .member-image,
+  .member .image-slot{
+    width:100%!important;
+    height:220px!important;
+    min-height:220px!important;
+    max-height:220px!important;
+    border:0!important;
+  }
+  .member .member-image img{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:center 31%!important;
+    display:block!important;
+  }
+  .member-body{
+    height:auto!important;
+    min-height:150px!important;
+    padding:16px 12px 18px!important;
+    border-top:3px solid var(--accent)!important;
+    border-left:0!important;
+    display:block!important;
+    overflow:visible!important;
+  }
+  .member-name-row{
+    display:block!important;
+    width:100%!important;
+    margin-top:14px!important;
+  }
+  .member-name-row .member-name{
+    display:block!important;
+    margin:0!important;
+    font-size:24px!important;
+    line-height:1.05!important;
+  }
+  .member-en{
+    display:block!important;
+    width:100%!important;
+    margin-top:7px!important;
+    font-size:11px!important;
+    line-height:1.25!important;
+    letter-spacing:.10em!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  .member-role{margin-top:9px!important;font-size:8px!important}
+  .member-more{margin-top:13px!important;font-size:14px!important}
+}
+@media(max-width:370px){
+  .member .member-image,.member .image-slot{height:205px!important;min-height:205px!important;max-height:205px!important}
+  .member-name-row .member-name{font-size:21px!important}
+  .member-en{font-size:10px!important}
+}
+
 </style>
 </head>
 <body>
 
 <header class="topbar">
   <nav class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="VANDAL 공식 홈페이지 맨 위로"><img src="assets/vandal-logo.png" alt="VANDAL"><small>OFFICIAL WEBSITE</small></a>
+    <a class="brand" href="#top" aria-label="VANDAL 공식 홈페이지 맨 위로"><img src="assets/img_02_784a993ac2.png" alt="VANDAL"><small>OFFICIAL WEBSITE</small></a>
     <div class="navlinks">
       <a href="#members">MEMBERS</a><a href="#latest">NEWS</a><a href="#world">BEHIND</a><a href="#tag">TAG</a><a href="#community">COMMUNITY</a>
     </div>
@@ -704,7 +850,7 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
 
 <section class="section members" id="members">
  <div class="wrap">
-  <div class="section-head"><div><div class="eyebrow">01 / THE LINEUP · LIVE AND LOUD</div><h2>MEMBERS<span class="heading-asterisk">✳</span></h2></div><div class="head-note">각 멤버 카드를 누르면 프로필과 공개 정보를 확인할 수 있습니다.</div></div>
+  <div class="section-head"><div><div class="eyebrow">01 / THE LINEUP · LIVE AND LOUD</div><h2>MEMBERS<span class="heading-asterisk" aria-hidden="true"></span></h2></div><div class="head-note">각 멤버 카드를 누르면 프로필과 공개 정보를 확인할 수 있습니다.</div></div>
   <div class="member-grid" id="memberGrid"></div>
   <div class="profile-rail"><span class="pill">VOCAL</span><span class="pill">LEAD GUITAR</span><span class="pill">RHYTHM GUITAR</span><span class="pill">BASS / SUB VOCAL</span><span class="pill">DRUM</span></div>
  </div>
@@ -714,7 +860,7 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
  <div class="wrap">
   <div class="section-head"><div><div class="eyebrow">02 / LATEST UPDATES</div><h2>NEWS<span class="heading-period">.</span></h2></div><div class="head-note">공식 공지, 공연 업데이트, 공개된 콘텐츠를 가장 먼저 확인하세요.</div></div>
   <div class="latest-grid">
-    <article class="feature"><div class="image-slot feature-photo" role="img" aria-label="노을이 비치는 VANDAL 연습실 장면" style="background-image:url(&quot;assets/news-rooftop.png&quot;)"></div><div class="feature-content"><div><div class="eyebrow" style="color:#aaa">FEATURED</div><h3>NO EXIT<br>ONE NIGHT LIVE</h3><p>2026.03.14 / HYUNAM</p></div><div class="feature-badge">FEATURED UPDATE</div></div></article>
+    <article class="feature"><div class="image-slot feature-photo" role="img" aria-label="노을이 비치는 VANDAL 연습실 장면" style="background-image:url(&quot;assets/img_03_69a26f2121.png&quot;)"></div><div class="feature-content"><div><div class="eyebrow" style="color:#aaa">FEATURED</div><h3>NO EXIT<br>ONE NIGHT LIVE</h3><p>2026.03.14 / HYUNAM</p></div><div class="feature-badge">FEATURED UPDATE</div></div></article>
     <div class="news-stack">
       <button class="news-card" type="button" data-news="0"><div class="date">2026.03.10 / LIVE</div><h4>NO EXIT 공연 상세 안내 및 입장 공지</h4><div class="arrow">↗</div></button>
       <button class="news-card" type="button" data-news="1"><div class="date">2026.03.07 / NOTICE</div><h4>아티스트 사생활 침해 관련 공식 안내</h4><div class="arrow">↗</div></button>
@@ -735,18 +881,18 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
 
 <section class="section official-tag" id="tag">
  <div class="wrap">
-  <div class="section-head"><div><div class="eyebrow">04 / OFFICIAL FAN CLUB</div><h2>TAG<span class="tag-star">✳</span></h2></div><div class="head-note">VANDAL OFFICIAL FAN CLUB · 팬의 이름으로 가까워지는 순간.</div></div>
+  <div class="section-head"><div><div class="eyebrow">04 / OFFICIAL FAN CLUB</div><h2>TAG<span class="tag-star" aria-hidden="true"></span></h2></div><div class="head-note">VANDAL OFFICIAL FAN CLUB · 팬의 이름으로 가까워지는 순간.</div></div>
   <div class="tag-hero">
    <div class="tag-left">
     <div class="tag-topline"><span>VANDAL OFFICIAL FAN CLUB</span><span>EST. AFTER THE FIRST STAGE</span></div>
     <div class="tag-motto">FIVE MEMBERS.<br>ONE NAME.<br><em>TAG.</em></div>
     <div class="tag-bottomline"><span>YOUR PLACE IN THE NOISE</span><span>VANDAL × TAG ↗</span></div>
    </div>
-   <div class="tag-visual tag-merch-art" role="img" aria-label="TAG 공식 팬클럽 이미지"><img src="assets/tag-banner.png" alt="TAG 공식 팬클럽 굿즈: 검은 토트백, 정태겸 아크릴 키링, 붉은 응원 슬로건" loading="lazy" decoding="async"></div>
+   <div class="tag-visual tag-merch-art" role="img" aria-label="TAG 공식 팬클럽 이미지"><img src="assets/img_04_44286ff05e.png" alt="TAG 공식 팬클럽 굿즈: 검은 토트백, 정태겸 아크릴 키링, 붉은 응원 슬로건" loading="lazy" decoding="async"></div>
   </div>
   <div class="tag-lower">
     <div class="tag-president">
-      <div class="tag-president-image" role="img" aria-label="TAG 공식 팬클럽 회장 차유리"><img src="assets/cha-yuri.png" alt="차유리, TAG 팬클럽 회장"></div>
+      <div class="tag-president-image" role="img" aria-label="TAG 공식 팬클럽 회장 차유리"><img src="assets/img_05_9d3d258a2c.png" alt="차유리, TAG 팬클럽 회장"></div>
       <div class="tag-president-copy"><div class="eyebrow">FAN CLUB PRESIDENT / CHAIR</div><h3>차유리 <span>CHA YURI</span></h3><p>VANDAL이 유명해지기 전부터 다섯 멤버를 알고 지낸 인물. 공식 팬클럽 TAG의 운영과 현장 서포트를 총괄한다.</p></div>
     </div>
     <div class="tag-notice"><div class="eyebrow">FAN CLUB NOTICE</div><h3>TAG MEMBERSHIP<br>GUIDELINES</h3>
@@ -781,7 +927,7 @@ h2{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:1000;line-heigh
 <script>
 
 // ===== TWO-DISC PLAYER / TIMECODE-SYNCHRONIZED LYRICS =====
-const tracks=[{"title":"AFTER THE BELL","artist":"VANDAL","src":"assets/after-the-bell.mp3","lyrics":[{"t":1.11,"text":"Bell’s gone."},{"t":2.39,"text":"Nobody tells us when to leave."},{"t":5.74,"text":"첫차와 막차 사이"},{"t":7.5,"text":"대충 어른인 척을 하지"},{"t":10.13,"text":"No map, still confused"},{"t":11.96,"text":"웃기네, 달라진 게 없지"},{"t":15.63,"text":"근데 이번엔—"},{"t":17.79,"text":"nobody’s calling time."},{"t":30.95,"text":"열아홉엔 문밖만 봤는데"},{"t":33.27,"text":"나오니까 길이 너무 많아"},{"t":35.42,"text":"Don't know where I wanna go"},{"t":37.34,"text":"just know where I don't wanna be"},{"t":40.37,"text":"친구들은 하나둘"},{"t":41.64,"text":"그럴듯한 답을 골라 적어"},{"t":45.31,"text":"나만 빈칸인 것 같아서"},{"t":46.91,"text":"괜히 펜 끝만 눌러"},{"t":48.51,"text":"근데 잠깐—"},{"t":50.9,"text":"누가 답이 하나랬지?"},{"t":53.77,"text":"누가 늦었다고 했지?"},{"t":55.69,"text":"우리가 풀던 문제엔"},{"t":57.12,"text":"애초에 뒤쪽 페이지가 없었어"},{"t":60.55,"text":"After the bell"},{"t":61.51,"text":"we’re on our own"},{"t":62.71,"text":"끝났는데 아무도 안 알려줘"},{"t":65.5,"text":"어디로 가야 맞는 건지"},{"t":70.69,"text":"Wrong turn, missed train"},{"t":71.96,"text":"another fucked-up day"},{"t":73.16,"text":"정답지를 찾았는데"},{"t":75.07,"text":"there never was one."},{"t":77.79,"text":"그러니까 틀린 것도 없지"},{"t":80.42,"text":"아직 쓰는 중이니까"},{"t":82.02,"text":"No bell"},{"t":82.18,"text":"No key"},{"t":82.5,"text":"No one grading me"},{"t":85.29,"text":"After the bell"},{"t":86.25,"text":"I choose what comes next."},{"t":90.07,"text":"Recalculating—"},{"t":91.27,"text":"또 길을 잘못 들었대"},{"t":92.87,"text":"Recalculating—"},{"t":94.06,"text":"그래서 뭐."},{"t":94.86,"text":"Turn left"},{"t":95.5,"text":"Turn right"},{"t":96.14,"text":"Stay out all night"},{"t":97.34,"text":"도착지는 몰라도"},{"t":99.09,"text":"keep going."},{"t":100.05,"text":"새벽 두 시 편의점 앞"},{"t":101.64,"text":"싼 맥주 하나씩 들고"},{"t":102.84,"text":"몇 달 만에 만난 얼굴에"},{"t":104.28,"text":"“잘 지냈냐”부터 묻지"},{"t":105.79,"text":"누군 휴학"},{"t":106.59,"text":"누군 연애"},{"t":107.31,"text":"누군 벌써 돈을 벌고"},{"t":110.02,"text":"Some still haven't figured it out"},{"t":111.7,"text":"smiling like they're doing fine"},{"t":114.49,"text":"예전엔 매일 붙어 있으면"},{"t":116.17,"text":"그게 영원인 줄 알았는데"},{"t":119.44,"text":"Now if we don't make plans to meet"},{"t":121.27,"text":"a whole season slips right by"},{"t":123.27,"text":"읽씹 몇 개"},{"t":123.9,"text":"끝난 사랑"},{"t":124.86,"text":"처음 받아본 월급까지"},{"t":126.38,"text":"다들 조금씩 다른 쪽으로"},{"t":127.97,"text":"자기 인생을 망치는 중"},{"t":130.13,"text":"Looks good on us."},{"t":132.2,"text":"스무 살이 되면"},{"t":133.48,"text":"뭔가 알게 될 줄 알았어"},{"t":135.63,"text":"Twenty-one"},{"t":136.27,"text":"Twenty-two"},{"t":137.15,"text":"숫자만 늘었네,"},{"t":138.98,"text":"same me"},{"t":140.02,"text":"근데 이상하지"},{"t":142.18,"text":"모르는 게 많아질수록"},{"t":144.33,"text":"내가 고를 것도 많아져"},{"t":146.96,"text":"어쩌면 자유란 건"},{"t":148.72,"text":"답이 없는 쪽이 맞나 봐."},{"t":152.07,"text":"After the bell"},{"t":153.03,"text":"we’re on our own"},{"t":154.22,"text":"누구도 다음 장을 안 읽어줘"},{"t":157.1,"text":"어디로 가야 맞는 건지"},{"t":162.28,"text":"Bad call, lost love"},{"t":163.48,"text":"another sleepless night"},{"t":164.6,"text":"그래도 내가 망친 내일이면"},{"t":166.59,"text":"내 손으로 고칠래"},{"t":169.14,"text":"정답지를 찾았는데"},{"t":171.62,"text":"there never was one."},{"t":174.17,"text":"그러니까 빈칸도 괜찮아"},{"t":176.96,"text":"아직 쓰는 중이니까"},{"t":179.12,"text":"No bell"},{"t":179.68,"text":"No key"},{"t":180.23,"text":"No one grading me"},{"t":181.83,"text":"After the bell"},{"t":182.71,"text":"I choose what comes next."},{"t":187.1,"text":"가든"},{"t":187.65,"text":"멈추든"},{"t":188.29,"text":"망치든"},{"t":188.93,"text":"돌아가든"},{"t":189.73,"text":"전부 내 차례야."},{"t":190.69,"text":"그래서 좀 무섭고"},{"t":191.8,"text":"kinda scary"},{"t":193.24,"text":"그래서—"},{"t":193.88,"text":"좀 재밌어."},{"t":194.52,"text":"kinda funny"},{"t":197.63,"text":"Where are you going?"},{"t":198.9,"text":"Don’t know."},{"t":200.02,"text":"What’s the plan?"},{"t":201.22,"text":"Don’t have one."},{"t":201.7,"text":"You sure about this?"},{"t":205.29,"text":"…"},{"t":205.29,"text":"Not really."},{"t":206.25,"text":"Good."},{"t":206.88,"text":"After the bell"},{"t":207.84,"text":"we’re still alive"},{"t":209.04,"text":"그렇게 나가고 싶던 문밖에서"},{"t":212.55,"text":"아직도 헤매고 있지만"},{"t":217.18,"text":"Wrong road, new name"},{"t":218.29,"text":"we’ll change it anyway"},{"t":219.65,"text":"정답지는 없었고"},{"t":221.56,"text":"we finally know it."},{"t":224.36,"text":"그러니까 남의 답을 베껴 쓰며"},{"t":227.47,"text":"살 필요도 없잖아"},{"t":229.14,"text":"No bell"},{"t":229.62,"text":"No key"},{"t":230.26,"text":"No one grading me"},{"t":231.38,"text":"늦으면 늦은 대로,"},{"t":232.58,"text":"my pace"},{"t":234.09,"text":"틀리면 틀린 대로,"},{"t":235.13,"text":"my way"},{"t":236.64,"text":"몇 번이고"},{"t":238.16,"text":"Recalculating."},{"t":240.31,"text":"누군 먼저 가고"},{"t":241.27,"text":"누군 잠깐 멈추고"},{"t":242.79,"text":"누군 돌아서겠지"},{"t":244.22,"text":"And that's okay."},{"t":247.18,"text":"우린 같은 답을"},{"t":248.53,"text":"쓸 필요 없으니까"},{"t":250.29,"text":"different lines, different lives"},{"t":252.84,"text":"After the bell"},{"t":253.8,"text":"종은 이미 끝났고"},{"t":256.03,"text":"the rest is ours."}],"duration":263.832},{"title":"TILL THE FIRST TRAIN COMES","artist":"VANDAL","src":"assets/till-the-first-train-comes.mp3","lyrics":[{"t":0.39,"text":"열아홉의 마지막 사진은"},{"t":2.87,"text":"누가 봐도 좀 엉망이었지"},{"t":5.18,"text":"터진 입술, 구겨진 교복"},{"t":7.5,"text":"웃긴 건 다들 웃고 있었어"},{"t":10.13,"text":"그땐 내일이 싫다면서"},{"t":12.2,"text":"내일만 오면 다를 줄 알았고"},{"t":14.52,"text":"정문 밖으로 뛰어나온 뒤"},{"t":16.75,"text":"우린 갈 데가 없어졌어"},{"t":19.46,"text":"학생증 대신 신분증을 꺼내"},{"t":22.97,"text":"괜히 한 번 더 보여주고"},{"t":24.73,"text":"처음 마신 것도 아닌 술인데"},{"t":26.72,"text":"오늘따라 조금 쓰다"},{"t":29.36,"text":"야, 그냥 조금 더 걷자"},{"t":31.19,"text":"Till the first train comes"},{"t":33.75,"text":"아무 데도 가지 않아도"},{"t":35.5,"text":"We can act like we're on our way"},{"t":39.01,"text":"다 컸다고 하기엔"},{"t":40.85,"text":"아직 겁이 너무 많으니까"},{"t":43.08,"text":"오늘은 그냥"},{"t":44.52,"text":"아무것도 되지 말자"},{"t":48.27,"text":"새벽 네 시 대학가 골목"},{"t":50.58,"text":"다섯 명인데 말이 하나도 없고"},{"t":52.89,"text":"누군가는 담배를 끊는다 하고"},{"t":55.53,"text":"오 분 뒤에 불을 빌려 갔지"},{"t":58.08,"text":"“너 요즘 뭐 하고 사냐”"},{"t":60.07,"text":"그 말엔 다들 대충 웃었고"},{"t":62.31,"text":"뭐라 대답하려다 말고"},{"t":64.62,"text":"괜히 빈 잔만 만졌어"},{"t":67.26,"text":"어제까진 세상이 좁아서"},{"t":69.33,"text":"죽어도 여기 못 있겠다더니"},{"t":71.88,"text":"막상 던져놓으니까"},{"t":74.84,"text":"왜 이렇게 넓냐"},{"t":76.51,"text":"우릴 잡던 사람도 없고"},{"t":79.14,"text":"No reason left to run"},{"t":81.22,"text":"이상하게 요즘은 자꾸"},{"t":83.45,"text":"어디론가 숨고 싶다"},{"t":87.68,"text":"야, 그냥 조금 더 걷자"},{"t":89.44,"text":"Till the first train comes"},{"t":91.99,"text":"아무 데도 가지 않아도"},{"t":93.75,"text":"We can act like we're on our way"},{"t":97.5,"text":"잘될 거란 말보다는"},{"t":98.93,"text":"“I don't know” sounds better"},{"t":100.69,"text":"우린 서로의"},{"t":101.64,"text":"대답은 못 되어줘도"},{"t":104.2,"text":"At least tonight"},{"t":107.15,"text":"혼자는 아니잖아"},{"t":110.02,"text":"열일곱엔 스무 살이 되면"},{"t":112.97,"text":"뭔가 알게 될 줄 알았어"},{"t":118.24,"text":"뭘 잡아야 하는지"},{"t":120.55,"text":"뭘 버려야 하는지"},{"t":122.87,"text":"어디쯤 멈춰야 하는지"},{"t":127.26,"text":"근데 씨발"},{"t":128.45,"text":"I still don't know"},{"t":129.89,"text":"그게 좀 웃겼어"},{"t":131.01,"text":"어른이 되겠다고"},{"t":132.2,"text":"학교 담까지 넘던 새끼들이"},{"t":134.52,"text":"몇 년 지나"},{"t":135.23,"text":"횡단보도 앞에 서서"},{"t":136.83,"text":"어디로 갈지도 모르고"},{"t":139.78,"text":"신호만 보고 있는 게"},{"t":144.57,"text":"야, 신호 바뀐다"},{"t":145.69,"text":"Light's green, let's go"},{"t":147.44,"text":"틀린 길이면 어떡하냐고?"},{"t":150.31,"text":"We'll figure it out"},{"t":151.99,"text":"우린 자꾸 망할 거고"},{"t":153.9,"text":"또 아무렇지 않은 척하겠지"},{"t":156.38,"text":"그러다 가끔"},{"t":157.58,"text":"진짜 아무렇지 않아질 거야"},{"t":160.69,"text":"그러니까 오늘만큼은"},{"t":163.08,"text":"다 아는 얼굴 하지 말자"},{"t":164.84,"text":"Till the first train comes"},{"t":171.38,"text":"아직 우리끼리는"},{"t":172.97,"text":"애여도 되잖아"}],"duration":177.384}];
+const tracks=[{"title":"AFTER THE BELL","artist":"VANDAL","src":"assets/audio_06_71a17010c2.mp3","lyrics":[{"t":1.11,"text":"Bell’s gone."},{"t":2.39,"text":"Nobody tells us when to leave."},{"t":5.74,"text":"첫차와 막차 사이"},{"t":7.5,"text":"대충 어른인 척을 하지"},{"t":10.13,"text":"No map, still confused"},{"t":11.96,"text":"웃기네, 달라진 게 없지"},{"t":15.63,"text":"근데 이번엔—"},{"t":17.79,"text":"nobody’s calling time."},{"t":30.95,"text":"열아홉엔 문밖만 봤는데"},{"t":33.27,"text":"나오니까 길이 너무 많아"},{"t":35.42,"text":"Don't know where I wanna go"},{"t":37.34,"text":"just know where I don't wanna be"},{"t":40.37,"text":"친구들은 하나둘"},{"t":41.64,"text":"그럴듯한 답을 골라 적어"},{"t":45.31,"text":"나만 빈칸인 것 같아서"},{"t":46.91,"text":"괜히 펜 끝만 눌러"},{"t":48.51,"text":"근데 잠깐—"},{"t":50.9,"text":"누가 답이 하나랬지?"},{"t":53.77,"text":"누가 늦었다고 했지?"},{"t":55.69,"text":"우리가 풀던 문제엔"},{"t":57.12,"text":"애초에 뒤쪽 페이지가 없었어"},{"t":60.55,"text":"After the bell"},{"t":61.51,"text":"we’re on our own"},{"t":62.71,"text":"끝났는데 아무도 안 알려줘"},{"t":65.5,"text":"어디로 가야 맞는 건지"},{"t":70.69,"text":"Wrong turn, missed train"},{"t":71.96,"text":"another fucked-up day"},{"t":73.16,"text":"정답지를 찾았는데"},{"t":75.07,"text":"there never was one."},{"t":77.79,"text":"그러니까 틀린 것도 없지"},{"t":80.42,"text":"아직 쓰는 중이니까"},{"t":82.02,"text":"No bell"},{"t":82.18,"text":"No key"},{"t":82.5,"text":"No one grading me"},{"t":85.29,"text":"After the bell"},{"t":86.25,"text":"I choose what comes next."},{"t":90.07,"text":"Recalculating—"},{"t":91.27,"text":"또 길을 잘못 들었대"},{"t":92.87,"text":"Recalculating—"},{"t":94.06,"text":"그래서 뭐."},{"t":94.86,"text":"Turn left"},{"t":95.5,"text":"Turn right"},{"t":96.14,"text":"Stay out all night"},{"t":97.34,"text":"도착지는 몰라도"},{"t":99.09,"text":"keep going."},{"t":100.05,"text":"새벽 두 시 편의점 앞"},{"t":101.64,"text":"싼 맥주 하나씩 들고"},{"t":102.84,"text":"몇 달 만에 만난 얼굴에"},{"t":104.28,"text":"“잘 지냈냐”부터 묻지"},{"t":105.79,"text":"누군 휴학"},{"t":106.59,"text":"누군 연애"},{"t":107.31,"text":"누군 벌써 돈을 벌고"},{"t":110.02,"text":"Some still haven't figured it out"},{"t":111.7,"text":"smiling like they're doing fine"},{"t":114.49,"text":"예전엔 매일 붙어 있으면"},{"t":116.17,"text":"그게 영원인 줄 알았는데"},{"t":119.44,"text":"Now if we don't make plans to meet"},{"t":121.27,"text":"a whole season slips right by"},{"t":123.27,"text":"읽씹 몇 개"},{"t":123.9,"text":"끝난 사랑"},{"t":124.86,"text":"처음 받아본 월급까지"},{"t":126.38,"text":"다들 조금씩 다른 쪽으로"},{"t":127.97,"text":"자기 인생을 망치는 중"},{"t":130.13,"text":"Looks good on us."},{"t":132.2,"text":"스무 살이 되면"},{"t":133.48,"text":"뭔가 알게 될 줄 알았어"},{"t":135.63,"text":"Twenty-one"},{"t":136.27,"text":"Twenty-two"},{"t":137.15,"text":"숫자만 늘었네,"},{"t":138.98,"text":"same me"},{"t":140.02,"text":"근데 이상하지"},{"t":142.18,"text":"모르는 게 많아질수록"},{"t":144.33,"text":"내가 고를 것도 많아져"},{"t":146.96,"text":"어쩌면 자유란 건"},{"t":148.72,"text":"답이 없는 쪽이 맞나 봐."},{"t":152.07,"text":"After the bell"},{"t":153.03,"text":"we’re on our own"},{"t":154.22,"text":"누구도 다음 장을 안 읽어줘"},{"t":157.1,"text":"어디로 가야 맞는 건지"},{"t":162.28,"text":"Bad call, lost love"},{"t":163.48,"text":"another sleepless night"},{"t":164.6,"text":"그래도 내가 망친 내일이면"},{"t":166.59,"text":"내 손으로 고칠래"},{"t":169.14,"text":"정답지를 찾았는데"},{"t":171.62,"text":"there never was one."},{"t":174.17,"text":"그러니까 빈칸도 괜찮아"},{"t":176.96,"text":"아직 쓰는 중이니까"},{"t":179.12,"text":"No bell"},{"t":179.68,"text":"No key"},{"t":180.23,"text":"No one grading me"},{"t":181.83,"text":"After the bell"},{"t":182.71,"text":"I choose what comes next."},{"t":187.1,"text":"가든"},{"t":187.65,"text":"멈추든"},{"t":188.29,"text":"망치든"},{"t":188.93,"text":"돌아가든"},{"t":189.73,"text":"전부 내 차례야."},{"t":190.69,"text":"그래서 좀 무섭고"},{"t":191.8,"text":"kinda scary"},{"t":193.24,"text":"그래서—"},{"t":193.88,"text":"좀 재밌어."},{"t":194.52,"text":"kinda funny"},{"t":197.63,"text":"Where are you going?"},{"t":198.9,"text":"Don’t know."},{"t":200.02,"text":"What’s the plan?"},{"t":201.22,"text":"Don’t have one."},{"t":201.7,"text":"You sure about this?"},{"t":205.29,"text":"…"},{"t":205.29,"text":"Not really."},{"t":206.25,"text":"Good."},{"t":206.88,"text":"After the bell"},{"t":207.84,"text":"we’re still alive"},{"t":209.04,"text":"그렇게 나가고 싶던 문밖에서"},{"t":212.55,"text":"아직도 헤매고 있지만"},{"t":217.18,"text":"Wrong road, new name"},{"t":218.29,"text":"we’ll change it anyway"},{"t":219.65,"text":"정답지는 없었고"},{"t":221.56,"text":"we finally know it."},{"t":224.36,"text":"그러니까 남의 답을 베껴 쓰며"},{"t":227.47,"text":"살 필요도 없잖아"},{"t":229.14,"text":"No bell"},{"t":229.62,"text":"No key"},{"t":230.26,"text":"No one grading me"},{"t":231.38,"text":"늦으면 늦은 대로,"},{"t":232.58,"text":"my pace"},{"t":234.09,"text":"틀리면 틀린 대로,"},{"t":235.13,"text":"my way"},{"t":236.64,"text":"몇 번이고"},{"t":238.16,"text":"Recalculating."},{"t":240.31,"text":"누군 먼저 가고"},{"t":241.27,"text":"누군 잠깐 멈추고"},{"t":242.79,"text":"누군 돌아서겠지"},{"t":244.22,"text":"And that's okay."},{"t":247.18,"text":"우린 같은 답을"},{"t":248.53,"text":"쓸 필요 없으니까"},{"t":250.29,"text":"different lines, different lives"},{"t":252.84,"text":"After the bell"},{"t":253.8,"text":"종은 이미 끝났고"},{"t":256.03,"text":"the rest is ours."}],"duration":263.832},{"title":"TILL THE FIRST TRAIN COMES","artist":"VANDAL","src":"assets/audio_07_c7d77dfced.mp3","lyrics":[{"t":0.39,"text":"열아홉의 마지막 사진은"},{"t":2.87,"text":"누가 봐도 좀 엉망이었지"},{"t":5.18,"text":"터진 입술, 구겨진 교복"},{"t":7.5,"text":"웃긴 건 다들 웃고 있었어"},{"t":10.13,"text":"그땐 내일이 싫다면서"},{"t":12.2,"text":"내일만 오면 다를 줄 알았고"},{"t":14.52,"text":"정문 밖으로 뛰어나온 뒤"},{"t":16.75,"text":"우린 갈 데가 없어졌어"},{"t":19.46,"text":"학생증 대신 신분증을 꺼내"},{"t":22.97,"text":"괜히 한 번 더 보여주고"},{"t":24.73,"text":"처음 마신 것도 아닌 술인데"},{"t":26.72,"text":"오늘따라 조금 쓰다"},{"t":29.36,"text":"야, 그냥 조금 더 걷자"},{"t":31.19,"text":"Till the first train comes"},{"t":33.75,"text":"아무 데도 가지 않아도"},{"t":35.5,"text":"We can act like we're on our way"},{"t":39.01,"text":"다 컸다고 하기엔"},{"t":40.85,"text":"아직 겁이 너무 많으니까"},{"t":43.08,"text":"오늘은 그냥"},{"t":44.52,"text":"아무것도 되지 말자"},{"t":48.27,"text":"새벽 네 시 대학가 골목"},{"t":50.58,"text":"다섯 명인데 말이 하나도 없고"},{"t":52.89,"text":"누군가는 담배를 끊는다 하고"},{"t":55.53,"text":"오 분 뒤에 불을 빌려 갔지"},{"t":58.08,"text":"“너 요즘 뭐 하고 사냐”"},{"t":60.07,"text":"그 말엔 다들 대충 웃었고"},{"t":62.31,"text":"뭐라 대답하려다 말고"},{"t":64.62,"text":"괜히 빈 잔만 만졌어"},{"t":67.26,"text":"어제까진 세상이 좁아서"},{"t":69.33,"text":"죽어도 여기 못 있겠다더니"},{"t":71.88,"text":"막상 던져놓으니까"},{"t":74.84,"text":"왜 이렇게 넓냐"},{"t":76.51,"text":"우릴 잡던 사람도 없고"},{"t":79.14,"text":"No reason left to run"},{"t":81.22,"text":"이상하게 요즘은 자꾸"},{"t":83.45,"text":"어디론가 숨고 싶다"},{"t":87.68,"text":"야, 그냥 조금 더 걷자"},{"t":89.44,"text":"Till the first train comes"},{"t":91.99,"text":"아무 데도 가지 않아도"},{"t":93.75,"text":"We can act like we're on our way"},{"t":97.5,"text":"잘될 거란 말보다는"},{"t":98.93,"text":"“I don't know” sounds better"},{"t":100.69,"text":"우린 서로의"},{"t":101.64,"text":"대답은 못 되어줘도"},{"t":104.2,"text":"At least tonight"},{"t":107.15,"text":"혼자는 아니잖아"},{"t":110.02,"text":"열일곱엔 스무 살이 되면"},{"t":112.97,"text":"뭔가 알게 될 줄 알았어"},{"t":118.24,"text":"뭘 잡아야 하는지"},{"t":120.55,"text":"뭘 버려야 하는지"},{"t":122.87,"text":"어디쯤 멈춰야 하는지"},{"t":127.26,"text":"근데 씨발"},{"t":128.45,"text":"I still don't know"},{"t":129.89,"text":"그게 좀 웃겼어"},{"t":131.01,"text":"어른이 되겠다고"},{"t":132.2,"text":"학교 담까지 넘던 새끼들이"},{"t":134.52,"text":"몇 년 지나"},{"t":135.23,"text":"횡단보도 앞에 서서"},{"t":136.83,"text":"어디로 갈지도 모르고"},{"t":139.78,"text":"신호만 보고 있는 게"},{"t":144.57,"text":"야, 신호 바뀐다"},{"t":145.69,"text":"Light's green, let's go"},{"t":147.44,"text":"틀린 길이면 어떡하냐고?"},{"t":150.31,"text":"We'll figure it out"},{"t":151.99,"text":"우린 자꾸 망할 거고"},{"t":153.9,"text":"또 아무렇지 않은 척하겠지"},{"t":156.38,"text":"그러다 가끔"},{"t":157.58,"text":"진짜 아무렇지 않아질 거야"},{"t":160.69,"text":"그러니까 오늘만큼은"},{"t":163.08,"text":"다 아는 얼굴 하지 말자"},{"t":164.84,"text":"Till the first train comes"},{"t":171.38,"text":"아직 우리끼리는"},{"t":172.97,"text":"애여도 되잖아"}],"duration":177.384}];
 const audio=document.getElementById('musicAudio');
 const playBtn=document.getElementById('musicPlay');
 const seek=document.getElementById('musicSeek');
@@ -849,7 +995,7 @@ document.addEventListener('click', function startOnFirstClick(e){
   });
 },true);
 
-const members=[{"name":"정태겸","en":"JUNG TAEGYEOM","role":"MAIN VOCAL","profile":"22 / HYUNAM UNIVERSITY","desc":"거친 라이브와 강한 무대 장악력으로 VANDAL의 중앙을 차지하는 메인보컬. 무대 위 존재감만큼 무대 밖 성질도 유명하다.","keywords":["직선적","자존심","즉흥적","승부욕","무대체질"],"hobby":"PC방 · 복싱 영상 · 길고양이 돌보기 · 오토바이","favorite":"제육볶음 · 닭발 · 컵라면 · 탄산","type":"자기 생활이 확실하고 독립적인 사람","known":["거친 라이브","짧은 성질","최소한의 팬서비스","길고양이 앞에서 유독 약함"],"family":"체면과 통제를 중시하는 집안에서 자랐다. 아버지와의 관계는 오래전부터 좋지 않았고, 어머니는 집을 떠난 뒤 돌아오지 않았다. 가족에 관한 이야기는 거의 하지 않는다. 누가 먼저 묻더라도 대답은 대체로 짧다.","relationship":"짧게 만난 사람은 여러 명. 오래 이어진 관계는 없다. 가볍게 시작하고 가볍게 끝나는 연애에 익숙하다. 관계가 깊어지며 간섭이나 구속이 늘어나면 먼저 거리를 두는 편.","tmi":"간섭받는 건 질색하면서, 남 일에는 생각보다 자주 끼어든다.","image":"assets/jung-taegyeom.webp"},{"name":"서이준","en":"SEO YIJUN","role":"LEAD GUITAR","profile":"22 / HYUNAM UNIVERSITY","desc":"편곡과 셋리스트, 합주의 완성도를 사실상 조율하는 리드기타. 부드럽게 웃는 얼굴과 달리 무대 밖에서는 좀처럼 빈틈을 보이지 않는다.","keywords":["계산적","관찰력","완벽주의","정보력","편곡"],"hobby":"추리소설 · 보드게임 · 서점 · 카페","favorite":"샌드위치 · 크림파스타 · 아이스티","type":"지적 대화가 통하고 사생활이 독립적인 사람","known":["편곡과 셋리스트","웃는 얼굴로 사람 긁기","합주에서 가장 까다로운 사람","정보가 빠름"],"family":"경제적으로 부족함 없는 환경에서 자랐다. 대신 집안이 중요하게 여긴 것은 감정보다 성취, 결과, 그리고 체면이었다. 잘하는 것은 당연했고 실수는 오래 남았다. 자신의 약점이나 실패를 타인에게 드러내는 일에 익숙하지 않다.","relationship":"지금까지의 연애는 두세 번 정도. 관계가 깊어질수록 자신의 감정이나 의존을 드러내지 않았고, 대부분 상대가 먼저 지쳐 관계를 끝냈다.","tmi":"본인 계획이 틀어지는 건 싫어하면서, 예상 못 한 변수는 끝까지 관찰한다.","image":"assets/seo-yijun.webp"},{"name":"한도윤","en":"HAN DOYUN","role":"RHYTHM GUITAR","profile":"22 / HYUNAM UNIVERSITY","desc":"팬서비스와 대외 소통에 가장 능한 리듬기타. 셀카, SNS, 분위기 띄우기까지 잘하지만 입이 빠른 만큼 사고도 빠르다.","keywords":["허세","입방정","팬서비스","유행민감","분위기메이커"],"hobby":"코노 · 패션 · 사진보정 · SNS · 맛집탐방","favorite":"떡볶이 · 피자 · 치킨 · 아이스크림","type":"외모가 취향이고 자신감 있으며 장난을 잘 받아치는 사람","known":["팬서비스","셀카","플러팅","쓸데없이 빠른 소문"],"family":"조용한 집에서 자란 사람은 아니다. 부모의 다툼이 잦았고, 장남이었던 한도윤은 동생들 앞에서는 별일 없는 사람처럼 행동하는 데 익숙해졌다. 가족 이야기를 먼저 꺼내는 일은 드물다.","relationship":"정식 연애 경험 없음. 썸, 플러팅, 연애 상담 경력은 넘치지만 정작 누군가와 사귄 적은 없다. 본인은 이 사실이 알려지는 걸 별로 좋아하지 않는다.","tmi":"연애 상담은 제일 많이 하는데, 자기 경험을 물으면 갑자기 말이 많아진다.","image":"assets/han-doyun.webp"},{"name":"윤시현","en":"YUN SIHYEON","role":"BASS / SUB VOCAL","profile":"22 / HYUNAM UNIVERSITY","desc":"베이스와 서브보컬을 맡는다. 취향과 선이 분명하고 필요 이상의 팬서비스를 하지 않는 것으로 유명하다.","keywords":["예민","취향확실","독설","심미주의","선택적친절"],"hobby":"플레이리스트 만들기 · 음악감상 · 문구 · 액세서리 · 카페 · 패션작업","favorite":"냉소바 · 과일 · 젤라토 · 아이스티","type":"취향을 존중하고 말보다 행동이 담백한 남성","known":["베이스톤","정확한 독설","최소한의 팬서비스","스타일링"],"family":"여유 있는 환경에서 자랐지만 자유로운 집안은 아니었다. 외모부터 성적, 진로까지 부모의 기준이 분명했고, 자연스럽게 자신의 취향과 선택을 간섭받는 것에 예민해졌다. 독립에 대한 욕구가 강하다.","relationship":"고등학생 시절 남성과 비밀 연애를 한 경험이 한 번 있다. 현재는 서이준을 오래 좋아하고 있다. 시간이 꽤 흘렀지만 그 감정은 아직 정리되지 않았다.","tmi":"관심 없는 일에는 놀라울 만큼 무심한데, 자기 취향을 건드리면 오래 기억한다.","image":"assets/yun-sihyeon.webp"},{"name":"강선우","en":"KANG SEONWOO","role":"DRUM","profile":"22 / HYUNAM UNIVERSITY","desc":"정확한 드럼과 반듯한 대외 이미지로 VANDAL에서 가장 정상적으로 보이는 멤버. 감정보다 사실과 해결을 먼저 본다.","keywords":["원칙주의","침착","책임감","해결우선","무덤덤"],"hobby":"홈트 · 퍼즐 · 산책 · 간단한 요리 · 물건 수리","favorite":"카스텔라 · 오므라이스 · 우유 · 요거트","type":"의사와 감정을 명확하게 표현하는 사람","known":["정확한 드럼","멤버 제지","반듯한 대외 이미지","현실적인 해결책"],"family":"감정보다 책임과 해결을 먼저 배우며 자랐다. 힘든 일이 생기면 위로하기보다 문제의 원인을 찾고 해결책부터 제시하는 방식에 익숙하다. 그 방식이 언제나 상대에게 도움이 되는 것은 아니라는 사실은 비교적 늦게 알게 됐다.","relationship":"고등학생 때 한 번 연애했다. 필요한 것을 챙기고 실제적인 도움을 주는 데는 능숙했지만, 상대의 감정을 읽고 공감하는 일에는 서툴렀다. 결국 그 문제로 헤어졌고, 아직도 당시의 이별을 완전히 이해했다고 말하기는 어렵다.","tmi":"위로를 부탁받아도 해결책부터 말해서 가끔 더 열받게 한다.","image":"assets/kang-seonwoo.webp"}];
+const members=[{"name":"정태겸","en":"JUNG TAEGYEOM","role":"MAIN VOCAL","profile":"22 / HYUNAM UNIVERSITY","desc":"거친 라이브와 강한 무대 장악력으로 VANDAL의 중앙을 차지하는 메인보컬. 무대 위 존재감만큼 무대 밖 성질도 유명하다.","keywords":["직선적","자존심","즉흥적","승부욕","무대체질"],"hobby":"PC방 · 복싱 영상 · 길고양이 돌보기 · 오토바이","favorite":"제육볶음 · 닭발 · 컵라면 · 탄산","type":"자기 생활이 확실하고 독립적인 사람","known":["거친 라이브","짧은 성질","최소한의 팬서비스","길고양이 앞에서 유독 약함"],"family":"체면과 통제를 중시하는 집안에서 자랐다. 아버지와의 관계는 오래전부터 좋지 않았고, 어머니는 집을 떠난 뒤 돌아오지 않았다. 가족에 관한 이야기는 거의 하지 않는다. 누가 먼저 묻더라도 대답은 대체로 짧다.","relationship":"짧게 만난 사람은 여러 명. 오래 이어진 관계는 없다. 가볍게 시작하고 가볍게 끝나는 연애에 익숙하다. 관계가 깊어지며 간섭이나 구속이 늘어나면 먼저 거리를 두는 편.","tmi":"간섭받는 건 질색하면서, 남 일에는 생각보다 자주 끼어든다.","image":"assets/img_08_f48fb0bb22.webp"},{"name":"서이준","en":"SEO YIJUN","role":"LEAD GUITAR","profile":"22 / HYUNAM UNIVERSITY","desc":"편곡과 셋리스트, 합주의 완성도를 사실상 조율하는 리드기타. 부드럽게 웃는 얼굴과 달리 무대 밖에서는 좀처럼 빈틈을 보이지 않는다.","keywords":["계산적","관찰력","완벽주의","정보력","편곡"],"hobby":"추리소설 · 보드게임 · 서점 · 카페","favorite":"샌드위치 · 크림파스타 · 아이스티","type":"지적 대화가 통하고 사생활이 독립적인 사람","known":["편곡과 셋리스트","웃는 얼굴로 사람 긁기","합주에서 가장 까다로운 사람","정보가 빠름"],"family":"경제적으로 부족함 없는 환경에서 자랐다. 대신 집안이 중요하게 여긴 것은 감정보다 성취, 결과, 그리고 체면이었다. 잘하는 것은 당연했고 실수는 오래 남았다. 자신의 약점이나 실패를 타인에게 드러내는 일에 익숙하지 않다.","relationship":"지금까지의 연애는 두세 번 정도. 관계가 깊어질수록 자신의 감정이나 의존을 드러내지 않았고, 대부분 상대가 먼저 지쳐 관계를 끝냈다.","tmi":"본인 계획이 틀어지는 건 싫어하면서, 예상 못 한 변수는 끝까지 관찰한다.","image":"assets/img_09_f812e75648.webp"},{"name":"한도윤","en":"HAN DOYUN","role":"RHYTHM GUITAR","profile":"22 / HYUNAM UNIVERSITY","desc":"팬서비스와 대외 소통에 가장 능한 리듬기타. 셀카, SNS, 분위기 띄우기까지 잘하지만 입이 빠른 만큼 사고도 빠르다.","keywords":["허세","입방정","팬서비스","유행민감","분위기메이커"],"hobby":"코노 · 패션 · 사진보정 · SNS · 맛집탐방","favorite":"떡볶이 · 피자 · 치킨 · 아이스크림","type":"외모가 취향이고 자신감 있으며 장난을 잘 받아치는 사람","known":["팬서비스","셀카","플러팅","쓸데없이 빠른 소문"],"family":"조용한 집에서 자란 사람은 아니다. 부모의 다툼이 잦았고, 장남이었던 한도윤은 동생들 앞에서는 별일 없는 사람처럼 행동하는 데 익숙해졌다. 가족 이야기를 먼저 꺼내는 일은 드물다.","relationship":"정식 연애 경험 없음. 썸, 플러팅, 연애 상담 경력은 넘치지만 정작 누군가와 사귄 적은 없다. 본인은 이 사실이 알려지는 걸 별로 좋아하지 않는다.","tmi":"연애 상담은 제일 많이 하는데, 자기 경험을 물으면 갑자기 말이 많아진다.","image":"assets/img_10_ea6422df3b.webp"},{"name":"윤시현","en":"YUN SIHYEON","role":"BASS / SUB VOCAL","profile":"22 / HYUNAM UNIVERSITY","desc":"베이스와 서브보컬을 맡는다. 취향과 선이 분명하고 필요 이상의 팬서비스를 하지 않는 것으로 유명하다.","keywords":["예민","취향확실","독설","심미주의","선택적친절"],"hobby":"플레이리스트 만들기 · 음악감상 · 문구 · 액세서리 · 카페 · 패션작업","favorite":"냉소바 · 과일 · 젤라토 · 아이스티","type":"취향을 존중하고 말보다 행동이 담백한 남성","known":["베이스톤","정확한 독설","최소한의 팬서비스","스타일링"],"family":"여유 있는 환경에서 자랐지만 자유로운 집안은 아니었다. 외모부터 성적, 진로까지 부모의 기준이 분명했고, 자연스럽게 자신의 취향과 선택을 간섭받는 것에 예민해졌다. 독립에 대한 욕구가 강하다.","relationship":"고등학생 시절 남성과 비밀 연애를 한 경험이 한 번 있다. 현재는 서이준을 오래 좋아하고 있다. 시간이 꽤 흘렀지만 그 감정은 아직 정리되지 않았다.","tmi":"관심 없는 일에는 놀라울 만큼 무심한데, 자기 취향을 건드리면 오래 기억한다.","image":"assets/img_11_568ac7f3c5.webp"},{"name":"강선우","en":"KANG SEONWOO","role":"DRUM","profile":"22 / HYUNAM UNIVERSITY","desc":"정확한 드럼과 반듯한 대외 이미지로 VANDAL에서 가장 정상적으로 보이는 멤버. 감정보다 사실과 해결을 먼저 본다.","keywords":["원칙주의","침착","책임감","해결우선","무덤덤"],"hobby":"홈트 · 퍼즐 · 산책 · 간단한 요리 · 물건 수리","favorite":"카스텔라 · 오므라이스 · 우유 · 요거트","type":"의사와 감정을 명확하게 표현하는 사람","known":["정확한 드럼","멤버 제지","반듯한 대외 이미지","현실적인 해결책"],"family":"감정보다 책임과 해결을 먼저 배우며 자랐다. 힘든 일이 생기면 위로하기보다 문제의 원인을 찾고 해결책부터 제시하는 방식에 익숙하다. 그 방식이 언제나 상대에게 도움이 되는 것은 아니라는 사실은 비교적 늦게 알게 됐다.","relationship":"고등학생 때 한 번 연애했다. 필요한 것을 챙기고 실제적인 도움을 주는 데는 능숙했지만, 상대의 감정을 읽고 공감하는 일에는 서툴렀다. 결국 그 문제로 헤어졌고, 아직도 당시의 이별을 완전히 이해했다고 말하기는 어렵다.","tmi":"위로를 부탁받아도 해결책부터 말해서 가끔 더 열받게 한다.","image":"assets/img_12_710a6874e2.webp"}];
 const grid=document.getElementById('memberGrid');
 members.forEach((m,i)=>{const b=document.createElement('button');b.className='member';b.innerHTML=`<div class="image-slot member-image"><img src="${m.image}" alt="${m.name} 무대 이미지" loading="eager" decoding="async"></div><div class="member-body"><div class="member-no">0${i+1}</div><div class="member-name-row"><div class="member-name">${m.name}</div><div class="member-en">${m.en}</div></div><div class="member-role">${m.role}</div><div class="member-more">↗</div></div>`;b.addEventListener('click',()=>openMember(i));grid.appendChild(b)});
 const modal=document.getElementById('modal');
@@ -916,7 +1062,7 @@ document.getElementById('aboutBtn').addEventListener('click',()=>openInfo('THE F
 
 아무도 먼저 계속하자고 말하지 않았지만, 다음 합주 날짜는 이미 잡혀 있었다.
 
-그렇게 VANDAL이 남았다.`,'BEHIND THE BAND','assets/one-stage-became-a-band.png','ONE STAGE BECAME A BAND.'));
+그렇게 VANDAL이 남았다.`,'BEHIND THE BAND','assets/img_13_a3f47da87b.png','ONE STAGE BECAME A BAND.'));
 document.querySelectorAll('[data-news]').forEach(btn=>btn.addEventListener('click',()=>{
  const notices=[
  ['NO EXIT / ONE NIGHT LIVE','현암대학교에서 진행되는 VANDAL의 공연 소식. 대학 축제에서 시작된 다섯의 밴드가 다시 한 무대에 오른다. 공식 공지로 안내됩니다.'],
@@ -932,7 +1078,7 @@ document.getElementById('relationBtn').addEventListener('click',()=>openInfo('FI
 음악적 합, 공연 기회, 자존심.
 그리고 쉽게 대체할 수 없는 익숙함.
 
-그래서 아직 다섯이다.`,'RELATION MAP','assets/not-friends-still-together.png','NOT FRIENDS.<br>STILL TOGETHER.'));
+그래서 아직 다섯이다.`,'RELATION MAP','assets/img_14_e0b05f7072.png','NOT FRIENDS.<br>STILL TOGETHER.'));
 document.querySelectorAll('.post>button').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
 const nav=document.getElementById('nav');document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 const links=[...document.querySelectorAll('.navlinks a')];const secs=[...document.querySelectorAll('main section[id]')];const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))})},{rootMargin:'-45% 0px -50% 0px'});secs.forEach(s=>io.observe(s));
